@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { FaBars, FaCommentAlt, FaRegChartBar, FaTh, FaCog } from "react-icons/fa"
+import { FaBars, FaCommentAlt, FaRegChartBar, FaCog, FaCity } from "react-icons/fa"
 import { NavLink } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -16,6 +16,11 @@ const Sidebar = ({ children }) => {
 
     const menuItem = [
         {
+            path: "/company",
+            name: "Company",
+            icon: <FaCity />
+        },
+        {
             path: "/progress",
             name: "progress",
             icon: <FaRegChartBar />
@@ -23,7 +28,7 @@ const Sidebar = ({ children }) => {
         {
             path: "/dashboard",
             name: "dashboard",
-            icon: <FaTh />
+            icon: <FaCity />
         },
         {
             path: "/chatRoom",
@@ -35,6 +40,7 @@ const Sidebar = ({ children }) => {
             name: "settings",
             icon: <FaCog />
         },
+        
     ]
     return (<div>
 
