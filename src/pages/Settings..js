@@ -1,6 +1,9 @@
 const Settings = () => {
-    return (
+    return (<div className="pageContainer">
         <h1>Settings</h1>
+
+    </div>
+
     )
 }
 

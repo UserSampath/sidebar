@@ -1,6 +1,8 @@
 const Progress = () => {
     return (
-        <h1>Progress</h1>
+        <div className="pageContainer">
+            <h1>Progress</h1>
+        </div>
     )
 }
 

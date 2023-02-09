@@ -2,6 +2,11 @@
 import { useState } from "react";
 import { FaBars, FaCommentAlt, FaRegChartBar, FaTh, FaCog } from "react-icons/fa"
 import { NavLink } from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import  "./SideBar.css"
 
 
 const Sidebar = ({ children }) => {
@@ -31,9 +36,42 @@ const Sidebar = ({ children }) => {
             icon: <FaCog />
         },
     ]
-    return (
+    return (<div>
 
-        <div className="container">
+        <Navbar collapseOnSelect expand="lg" variant='dark' style={{ backgroundColor: "#282565" }} fixed="top"  >
+            <Container>
+
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+
+                        <NavDropdown title="Projects" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">Project 01</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">Project 02</NavDropdown.Item>
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">
+                                Add Project
+                            </NavDropdown.Item>
+                        </NavDropdown>
+
+                        <NavDropdown title="Members" id="collasible-nav-dropdown">
+                            <NavDropdown.Item href="#action/3.1">member 1</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">member 2</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">member 3</NavDropdown.Item>
+
+                            <NavDropdown.Divider />
+                            <NavDropdown.Item href="#action/3.4">
+                                Add Member
+                            </NavDropdown.Item>
+                        </NavDropdown>
+                    </Nav>
+                    <div className='ss'>profile picture</div>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+
+
+        <div className="sideBarContainer">
             <div className="sideBar" style={{ width: open ? "230px" : "50px" }}>
                 <div className="topSection"  >
                     <img style={{ display: open ? "block" : "none" }} className="logo" src="images/logo.png" alt="logo" />
@@ -54,6 +92,7 @@ const Sidebar = ({ children }) => {
             <main>{children}</main>
 
         </div>
+    </div>
     )
 }
 
